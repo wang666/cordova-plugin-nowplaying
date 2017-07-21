@@ -132,7 +132,8 @@
                 image = [UIImage imageWithData:imageData];
             } else {
                 // artwork is local. so create it from a UIImage
-                NSString *basePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+                //NSString *basePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+				NSString *basePath=[NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0]
                 NSString *fullPath = [NSString stringWithFormat:@"%@%@", basePath, url];
                 BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:fullPath];
                 if (fileExists) {
